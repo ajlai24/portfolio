@@ -1,19 +1,30 @@
 @import "~common/Layout.scss";
 
+$card-max-width-xs: 300px;
+$card-max-width-sm: 500px;
+$card-max-width-md: 700px;
+$card-max-width-lg: 450px;
+
 .card {
   padding: 0.5rem;
 
   img, .card-content {
-    min-height: 300px;
-    max-width: 300px;
+    max-width: $card-max-width-xs;
+  }
+
+  img {
+    min-height: $card-max-width-xs;
   }
 }
 
 @include media-breakpoint-up(sm) {
   .card {
     img, .card-content {
-      min-height: 500px;
-      max-width: 500px;
+      max-width: $card-max-width-sm;
+    }
+
+    img {
+      min-height: $card-max-width-sm;
     }
   }
 }
@@ -21,8 +32,11 @@
 @include media-breakpoint-up(md) {
   .card {
     img, .card-content {
-      min-height: 700px;
-      max-width: 700px;
+      max-width: $card-max-width-md;
+    }
+
+    img {
+      min-height: $card-max-width-md;
     }
   }
 }
@@ -30,8 +44,11 @@
 @include media-breakpoint-up(lg) {
   .card {
     img, .card-content {
-      min-height: 450px;
-      max-width: 450px;
+      max-width: $card-max-width-lg;
+    }
+
+    img {
+      min-height: $card-max-width-lg;
     }
   }
 }
