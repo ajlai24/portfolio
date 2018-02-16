@@ -1,0 +1,68 @@
+@import "~common/Common.scss";
+@import "~common/Colors.scss";
+
+.nav {
+  display: flex;
+  height: 50px;
+  align-items: center;
+
+  a {
+    font-size: 14px;
+    color: $white;
+  }
+
+  .logo {
+    margin-left: 2rem;
+    z-index: 100;
+    color: white;
+    position: fixed;
+  }
+
+  .nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    background: $blue-4;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    -webkit-flex-flow: row wrap;
+    justify-content: flex-end;
+
+    .nav-item {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-right: 2rem;
+      margin-left: 1rem;
+      position: relative;
+      font-weight: 300;
+
+      a:after {
+        position: absolute;
+        bottom: -0.25rem;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 0%;
+        content: '.';
+        color: transparent;
+        background: $white;
+        height: 1px;
+        transition: all .5s;
+      }
+
+      a.selected {
+        font-weight: 400;
+      }
+
+      a.selected:after, a:hover:after {
+        width: 100%;
+      }
+    }
+  }
+}

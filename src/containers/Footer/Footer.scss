@@ -1,0 +1,37 @@
+@import "~common/Colors.scss";
+
+.footer {
+  background-color: $gray-2;
+
+  a {
+    color: $blue-5;
+  }
+
+  .name {
+    font-size: 14px;
+    padding-right: 1rem;
+    border-right: 1px solid $gray-1;
+  }
+
+  .link {
+    padding-left: 1rem;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center;
+    color: $white;
+    font-size: 12px;
+    font-weight: 300;
+  }
+
+  .contact {
+    margin-left: 1rem;
+  }
+
+  .stats {
+    margin-right: 1rem;
+  }
+}

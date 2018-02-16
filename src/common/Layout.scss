@@ -1,0 +1,25 @@
+@import "~common/Common.scss";
+
+.center-col {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@include media-breakpoint-up(md) {
+  .center-col {
+    max-width: 700px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .center-col {
+    max-width: 890px;
+  }
+}
+
+
+@include media-breakpoint-up(xl) {
+  .center-col {
+    max-width: 1100px;
+  }
+}

@@ -1,0 +1,89 @@
+@import "~common/Common.scss";
+@import "~common/Colors.scss";
+@import "~common/Layout.scss";
+
+
+@mixin stagger-anim-delay($i, $initial-delay, $stagger-delay) {
+  @while $i > 0 {
+    &:nth-of-type(#{$i}) {
+      animation-delay: $initial-delay + $stagger-delay * $i;
+    }
+    $i: $i - 1;
+  }
+}
+
+.home {
+  .banner {
+    background-color: $blue-1;
+    color: $white;
+    display: flex;
+    width: 100%;
+    height: 75%;
+    align-items: center;
+    position: relative;
+    text-align: center;
+
+    .name {
+      color: $blue-5;
+    }
+
+    .content {
+      flex-grow: 1;
+      padding: 0 1rem;
+    }
+  }
+
+  .skills {
+    padding: 2rem 0;
+  }
+
+  .profile {
+    padding-top: 2rem;
+    text-align: center;
+  }
+
+  .profile-blurb {
+    padding-top: 1rem;
+    font-weight: 300;
+    text-align: center;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .home {
+    .banner {
+      .intro {
+        max-width: 700px;
+        margin: auto;
+      }
+
+      .intro2 {
+        display: inline-block;;
+      }
+    }
+
+    .skills {
+      padding: 2rem 0 5rem;
+    }
+
+    .profile {
+      padding-top: 0;
+      user-select: none;
+    }
+
+    .profile-blurb {
+      text-align: left;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .home {
+    .banner {
+      .intro {
+        max-width: 700px;
+        margin: auto;
+      }
+    }
+  }
+}

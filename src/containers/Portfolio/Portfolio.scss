@@ -1,0 +1,21 @@
+@import "~common/Layout.scss";
+
+.portfolio {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .text-card {
+    padding: 0.5rem;
+  }
+}
+
+
+@include media-breakpoint-down(md) {
+
+}
+
+@include media-breakpoint-up(lg) {
+
+}

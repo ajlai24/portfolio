@@ -1,0 +1,33 @@
+@import "~common/Common.scss";
+@import "~common/Colors.scss";
+
+.button-container {
+  padding: 1.5rem 0;
+
+  .button {
+    border: 2px solid $white;
+    border-radius: 50px;
+    color: $white;
+    font-weight: 300;
+    padding: 1rem 2rem;
+    transition: background-color .8s ease;
+
+    &:hover {
+      background-color: $blue-2;
+    }
+  }
+}
+
+
+
+@include media-breakpoint-up(md) {
+  .button-container {
+
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .button-container {
+
+  }
+}
