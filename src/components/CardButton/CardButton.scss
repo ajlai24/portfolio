@@ -1,0 +1,10 @@
+@import "~common/Common.scss";
+@import "~common/Colors.scss";
+
+.card-button {
+  a {
+    color: $white;
+    padding: 1rem 3rem;
+    border: 2px solid $white;
+  }
+}

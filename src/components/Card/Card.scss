@@ -8,6 +8,42 @@ $card-max-width-lg: 450px;
 .card {
   padding: 0.5rem;
 
+  .card-content {
+    position: relative;
+  }
+
+  .hover-content {
+    opacity: 0;
+    transition: all 1s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(12, 12, 12, .7);
+    top: 0;
+    transition: all 1s ease;
+  }
+
+  .description {
+    color: white;
+    padding: 2rem;
+    position: absolute;
+    top: 0;
+  }
+
+  .card-button-container {
+    position: absolute;
+    width: 100%;
+    bottom: 20%;
+    text-align: center;
+  }
+
   img, .card-content {
     max-width: $card-max-width-xs;
   }
