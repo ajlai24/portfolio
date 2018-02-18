@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Waypoint from 'react-waypoint';
+import { Element, scroller } from 'react-scroll';
 import Button from 'components/Button/Button';
 import Charts from 'components/Charts/Charts';
 import Values from 'containers/Values/Values';
@@ -17,6 +18,15 @@ const skills = [
   { name: 'Node.js / Express', value: 70 },
 ];
 
+const scrollToElement = elementName => (
+  scroller.scrollTo(elementName, {
+    duration: 800,
+    delay: 0,
+    offset: -20,
+    smooth: 'easeInOutQuart',
+  })
+);
+
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -27,6 +37,8 @@ class Home extends Component {
   }
 
   render() {
+    const scollToBannerBottom = () => scrollToElement('banner-bottom');
+
     return (
       <div className="home">
         <section className="banner">
@@ -43,16 +55,23 @@ class Home extends Component {
             </div>
           </div>
           <div className="view-more">
-            <div className="down-arrow" />
+            <div
+              role="button"
+              aria-hidden
+              onKeyPress={scollToBannerBottom}
+              className="down-arrow"
+              onClick={scollToBannerBottom}
+            />
+            <Element name="banner-bottom" />
           </div>
         </section>
 
         <Values
           visibility={this.state.visibleValues}
           wayPointHandler={
-          () => (
-            this.setState({ visibleValues: true })
-          )}
+            () => (
+              this.setState({ visibleValues: true })
+            )}
         />
 
         <section className="skills">
