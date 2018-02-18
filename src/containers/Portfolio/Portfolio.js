@@ -9,9 +9,10 @@ const textCard = props => (
     <div style={props.style}>
       <h3>Projects</h3>
       <div style={{ fontWeight: 300, paddingTop: '.75rem', lineHeight: '1.5rem' }}>
-        These days I&#39;m primarily in the front end space working with React but
-        I&#39;ve had experience as a full stack developer and a quality assurance
-        engineer in the past.
+        These days I&#39;m primarily in the front end space working with React as
+        I really enjoy it. During my many years at Salesforce I had been a full
+        stack developer and a quality assurance engineer on the Analytics team
+        and Mobile Web team.
       </div>
     </div>
   </Card>

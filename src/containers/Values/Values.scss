@@ -1,13 +1,23 @@
+@import "~common/Animations.scss";
 @import "~common/Common.scss";
 
 .values {
   padding: 3rem 0 1rem;
   text-align: center;
+  transition: opacity 1s ease 0.25s;
+
+  &.visible {
+    .icon {
+      opacity: 1;
+    }
+  }
 
   .icon {
     max-width: 100px;
     padding-top: 1rem;
     user-select: none;
+    opacity: 0;
+    transition: opacity 1s ease 0.25s;
   }
 
   .header {

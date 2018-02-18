@@ -13,7 +13,7 @@ const defaultProps = {
 };
 
 const Nav = props => (
-  <div>
+  <div className="nav-container">
     <div className="nav">
       {/* <div className="logo"><img src="/images/logo.png" alt="logo" /></div> */}
       <ul className="nav-list">
@@ -25,7 +25,7 @@ const Nav = props => (
         </li>
       </ul>
     </div>
-    <div>
+    <div className="children">
       { props.children }
     </div>
   </div>

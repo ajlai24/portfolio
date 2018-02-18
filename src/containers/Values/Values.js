@@ -1,5 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
+import Waypoint from 'react-waypoint';
 import './Values.scss';
+
+const propTypes = {
+  visibility: PropTypes.bool,
+  wayPointHandler: PropTypes.func,
+};
+
+const defaultProps = {
+  visibility: false,
+  wayPointHandler: () => {},
+};
 
 const sections = [
   {
@@ -13,9 +26,14 @@ const sections = [
   },
 ];
 
-const Values = () => (
-  <section className="values">
+const Values = props => (
+  <section className={cx('values', { visible: props.visibility })}>
     <div className="center-col row">
+      <Waypoint
+        onEnter={() => (
+          props.wayPointHandler()
+        )}
+      />
       { sections.map(section => (
         <div className="col-md" key={section.header}>
           <img className="icon" alt={section.alt} src={section.iconSrc} />
@@ -27,4 +45,6 @@ const Values = () => (
   </section>
 );
 
+Values.propTypes = propTypes;
+Values.defaultProps = defaultProps;
 export default Values;
