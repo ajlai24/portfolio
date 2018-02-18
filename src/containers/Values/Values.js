@@ -28,20 +28,21 @@ const sections = [
 
 const Values = props => (
   <section className={cx('values', { visible: props.visibility })}>
-    <div className="center-col row">
-      <Waypoint
-        onEnter={() => (
-          props.wayPointHandler()
-        )}
-      />
-      { sections.map(section => (
-        <div className="col-md" key={section.header}>
-          <img className="icon" alt={section.alt} src={section.iconSrc} />
-          <div className="header">{section.header}</div>
-          <div className="description">{section.description}</div>
-        </div>
-      ))}
-    </div>
+    <Waypoint
+      onEnter={() => (
+        props.wayPointHandler()
+      )}
+    >
+      <div className="center-col row">
+        { sections.map(section => (
+          <div className="col-md" key={section.header}>
+            <img className="icon" alt={section.alt} src={section.iconSrc} />
+            <div className="header">{section.header}</div>
+            <div className="description">{section.description}</div>
+          </div>
+        ))}
+      </div>
+    </Waypoint>
   </section>
 );
 

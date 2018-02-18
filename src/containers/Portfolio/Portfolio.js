@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ScrollToTopOnMount from 'components/ScrollToTopOnMount/ScrollToTopOnMount';
 import Card from 'components/Card/Card';
 
 import './Portfolio.scss';
@@ -20,7 +21,7 @@ const textCard = props => (
 
 const Portfolio = () => (
   <div className="portfolio">
-
+    <ScrollToTopOnMount />
     <div className="left-col">
       { textCard({ className: 'd-lg-none' }) }
       <Card

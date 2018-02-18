@@ -68,10 +68,7 @@ class Home extends Component {
 
         <Values
           visibility={this.state.visibleValues}
-          wayPointHandler={
-            () => (
-              this.setState({ visibleValues: true })
-            )}
+          wayPointHandler={() => (this.setState({ visibleValues: true }))}
         />
 
         <section className="skills">
