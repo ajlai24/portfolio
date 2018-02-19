@@ -33,3 +33,7 @@ const server = app.listen(PORT, () => {
   const port = server.address().port;
   console.log('App listening at http://%s:%s', host, port);
 });
+
+app.use(function (req, res, next) {
+  res.status(404).send("Sorry can't find that!");
+})

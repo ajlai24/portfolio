@@ -1,21 +1,28 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import Nav from 'containers/Nav/Nav';
 import Home from 'containers/Home/Home';
 import Portfolio from 'containers/Portfolio/Portfolio';
 
+import 'common/Animations.scss';
 import './App.scss';
 
-const App = () => (
-  <Router>
+const App = ({ location }) => {
+  return (
     <Nav>
-      <div> {/* TODO: Refactor nav. Not on babel v7 beta so can't use framents yet here */}
-        <Route exact path="/" component={Home} />
-        <Route path="/portfolio" component={Portfolio} />
-      </div>
+      <TransitionGroup>
+        <CSSTransition key={location.key} classNames="fade" timeout={750}>
+          <Switch location={location}>
+            <Route exact path="/" component={Home} />
+            <Route path="/portfolio" component={Portfolio} />
+            <Route render={() => <div>Not Found</div>} />
+          </Switch>
+        </CSSTransition>
+      </TransitionGroup>
     </Nav>
-  </Router>
-);
+  );
+};
 
-export default App;
+export default withRouter(App);
